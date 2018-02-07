@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from './layout/layout.modelu';
-import { ModuleModule } from './layout/model/model.module';
+import { ModuleModule } from './model/model.module';
 
 
 
