@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { StaticDataSource } from "./static.datasource";
 import { HttpResponse, HttpEvent, HttpEventType } from '@angular/common/http';
 import { User } from "./user.model";
+import { RestDataSource } from "./rest.datasource";
 //import { RestDataSource } from "./rest.datasource";
 
 
@@ -10,17 +11,17 @@ export class UserRepository {
     private users: User[] = [];
     private names: string[] = [];
 
-    constructor(private dataSource: StaticDataSource) {
+    constructor(private dataSource: RestDataSource) {
 
-        dataSource.getNews()
-        .subscribe(response => {
-            //console.log(response.body);
-            let data = response;
-            this.users = <User[]>data;
-            this.names = <string[]>data.map(p => p.name);
-                //.filter((c, index, array) => array.indexOf(c) == index).sort();
-            });
-        
+        dataSource.getUsers()
+            .subscribe(response => {
+                    //console.log(response.body);
+                    let data = response;
+                    this.users = <User[]>data;
+                    this.names = <string[]>data.map(n => n.name);
+                        //.filter((c, index, array) => array.indexOf(c) == index).sort();
+                    });
+                
     }
 
     getUsers(): User[] {

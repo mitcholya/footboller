@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from './layout/layout.modelu';
-import { ModuleModule } from './model/model.module';
+import { ModelModule } from './model/model.module';
 
 
 
@@ -20,7 +20,7 @@ import { ModuleModule } from './model/model.module';
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     LayoutModule,
-    ModuleModule
+    ModelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

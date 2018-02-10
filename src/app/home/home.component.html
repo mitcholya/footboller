@@ -1,7 +1,13 @@
 <div class="row bg-primary">
-  <div class="col-sm-2"><p class="text-light pt-3">Выберите юзера</p></div>
-  <button type="button" class="btn btn-primary btn-sm">User1</button>
-  <button type="button" class="btn btn-primary btn-sm">User2</button>
+  <div class="col-sm-2" >
+    <p class="text-light pt-1">Выберите юзера</p>
+  </div>
+  <div class="col-sm-1" *ngFor="let u of users">
+      <button type="button" class="btn btn-primary btn-sm" (click)="user(u.id)">User {{ u.id }}</button>
+      <!-- <button type="button" class="btn btn-primary btn-sm">User1</button>
+      <button type="button" class="btn btn-primary btn-sm">User2</button> -->
+  </div>
+  <p class="text-light pt-1">{{ currentUser?.name }}</p> 
 </div>
 <app-toolbar></app-toolbar>
 <app-content></app-content>
